@@ -10,8 +10,9 @@
     --first-color: #0d1b2a;
     --second-color: #1b263b;
     --third-color: #415a77;
-    --forth-color: #778da9;
+    --forth-color: rgb(119, 141, 169);
     --fifth-color: #e0e1dd;
+    --drop-shadow: rgb(128, 128, 128);
 }
 
 .flex {
@@ -21,69 +22,82 @@
 
 .section-title {
     font-weight: bold;
+    flex: 100%;
+    color: var(--first-color);
+    margin-bottom:2em;
+    text-shadow: .25em .2em 4px var(--drop-shadow);
+}
+
+.container-template {
+    margin: auto;
+    display:flex;
+    flex-wrap: wrap;
+    width:80%;
+    margin-top:2em;
+    margin-bottom:5em;   
 }
 
 body {
     font-family: "Trebuchet MS", "sans-serif";
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    background-position: 30% 50%;
 }
 
 /* UNIVERSAL STYLES ------- END */
 
 
+
 /* HEADER STYLES -------- START */
-header {
+.page-header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
     width:100%;
-    background-color:var(--first-color);
-    padding: 40px 0;
-    
+    background: rgb(3,22,42);
+    background: linear-gradient(180deg, var(--first-color) 0%, rgb(25, 52, 80) 99%);
+    padding: 20px 0;
 }
 
-header h1 {
+.page-header h1 {
     color: var(--forth-color);
 }
 
-header img {
-    position: absolute;
-    left: 5px;
-    top:5px;
-    width:200px;
-}
-header nav ul {
+.page-header nav ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
 }
 
-header nav ul li a{
-    margin: 0 25px;
-    padding:0 5px;
+.page-header nav ul li a{
+    margin: 0 .5em;
+    padding:0 1em;
     color: var(--forth-color);
     font-size: 1.5vw;
     font-weight: lighter;
-    
+    transition:ease-in .25s;
 }
 
-header nav ul li a:hover {
+.page-header nav ul li a:hover {
     box-shadow: 2px 2px 2px var(--fifth-color);
 }
 
-header nav ul li a:focus {
+.page-header nav ul li a:focus {
     box-shadow: 2px 2px 2px var(--fifth-color);
     background-color: var(--forth-color);
     color: var(--first-color);
 }
 
-header a {
+.page-header a {
     text-decoration: none;
 }
 
 /* HEADER STYLES ---------- END */
+
 
 
 /* HERO STYLES ---------- START */
@@ -94,23 +108,55 @@ header a {
 /* HERO STYLE ------------- END */
 
 
-/* ABOUT-ME STYLES ------ START */
-.about {
-    margin:15px auto;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width:80%;
-    align-content: space-around;
-}
 
-.about-me-title{
-    flex: 15%;
+/* ABOUT-ME STYLES ------ START */
+.about { 
+    justify-content: space-between;
+    align-content: center;
 }
 
 .about-me {
-    flex: 0 0 85%;
+    flex: 0 0 60%;
+    display: flex;
+    flex-wrap: wrap;
+    color:var(--fifth-color);
+    background-color: var(--forth-color);
+    border-radius: 10px;
+    padding:1.8em;
+    font-size: 22px;
+    font-weight: lighter;
+    box-shadow: .25em .25em 6px rgb(161, 161, 161,.7);
+}
+
+.about-me p{
+    opacity: 1.5;
+}
+
+.about img {
+    width:25vw;
+    height:25vw;
+    margin:auto;
+}
+
+/* ABOUT-ME STYLES -------- END */
+
+
+
+/* WORK STYLES ---------- START */
+.my-work {
+    margin: 15px auto;
+    display:flex;
+    width:80%;
+}
+
+.primary-work {
+    flex: 1 0 85%;
     display: flex;
     flex-wrap: wrap;
 }
-/* ABOUT-ME STYLES -------- END */
+
+.primary-work img {
+    max-width:100%;
+    max-height:auto;
+}
+/* WORK STYLES ------------ END */
