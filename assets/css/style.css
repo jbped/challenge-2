@@ -10,9 +10,9 @@
     --first-color: #0d1b2a;
     --second-color: #1b263b;
     --third-color: #415a77;
-    --forth-color: rgb(119, 141, 169);
+    --forth-color: rgba(119, 141, 169);
     --fifth-color: #e0e1dd;
-    --drop-shadow: rgb(128, 128, 128);
+    --drop-shadow: rgba(128, 128, 128);
 }
 
 .flex {
@@ -28,7 +28,7 @@
     text-shadow: .25em .2em 4px var(--drop-shadow);
 }
 
-.container-template {
+.container-flex {
     margin: auto;
     display:flex;
     flex-wrap: wrap;
@@ -60,6 +60,7 @@ body {
     background: rgb(3,22,42);
     background: linear-gradient(180deg, var(--first-color) 0%, rgb(25, 52, 80) 99%);
     padding: 20px 0;
+    box-shadow: 0 .5em 20px rgba(128, 128, 128, .7);
 }
 
 .page-header h1 {
@@ -76,11 +77,9 @@ body {
 .page-header nav ul li a{
     margin: 0 .5em;
     padding:0 .25em;
-    flex: 1 0 50%;
     color: var(--forth-color);
     font-size: 1.5vw;
     font-weight: lighter;
-    
 }
 
 .page-header nav ul li a:hover {
@@ -126,13 +125,13 @@ body {
 }
 
 .about img {
+    margin:auto;
     width:25vw;
     height:25vw;
-    margin:auto;
     min-width: 200px;
-    min-height:200px;
-    max-width: 450px;
-    max-height: 450px;
+    min-height: 200px;
+    max-height: 400px;
+    max-width: 400px;
 }
 
 /* ABOUT-ME STYLES -------- END */
@@ -142,18 +141,49 @@ body {
 /* WORK STYLES ---------- START */
 .my-work {
     margin: 15px auto;
-    display:flex;
     width:80%;
+    justify-content: space-between;
+    background-color: blue;
 }
 
-.primary-work {
-    flex: 1 0 85%;
+.work-square {
+    display:flex;
+    height: 0;
+    width:100%;
+    padding-bottom: 100%;
+    /* background-image: url(../images/y9DpT.jpg); */
+    background-color:green;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.work-square a::before {
+    padding-bottom: 100%;
+}
+
+.work-1 {
+    width: 48.75%;
+}
+
+.work-2 {
     display: flex;
-    flex-wrap: wrap;
+    width: 48.75%;
+    flex-flow: column;
+    justify-content: space-between;
+    flex:0 1 1;
 }
 
-.primary-work img {
-    max-width:100%;
-    max-height:auto;
+
+.work-2-img {
+    width:100%;
+    height:0;
+    padding-bottom: 30%;
+    /* background-image: url(../images/y9DpT.jpg); */
+    background-color: red;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: auto;
+    margin: auto;
 }
 /* WORK STYLES ------------ END */
