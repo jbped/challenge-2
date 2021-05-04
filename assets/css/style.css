@@ -10,9 +10,9 @@
     --first-color: #0d1b2a;
     --second-color: #1b263b;
     --third-color: #415a77;
-    --forth-color: rgb(119, 141, 169);
+    --forth-color: rgba(119, 141, 169);
     --fifth-color: #e0e1dd;
-    --drop-shadow: rgb(128, 128, 128);
+    --drop-shadow: rgba(128, 128, 128);
 }
 
 .flex {
@@ -28,13 +28,19 @@
     text-shadow: .25em .2em 4px var(--drop-shadow);
 }
 
-.container-template {
+.container-flex {
     margin: auto;
     display:flex;
     flex-wrap: wrap;
     width:80%;
     margin-top:2em;
     margin-bottom:5em;   
+}
+
+.container-grid {
+    display: grid;
+    width:80%;
+    margin: auto;
 }
 
 body {
@@ -60,6 +66,7 @@ body {
     background: rgb(3,22,42);
     background: linear-gradient(180deg, var(--first-color) 0%, rgb(25, 52, 80) 99%);
     padding: 20px 0;
+    box-shadow: 0 .5em 20px rgba(128, 128, 128, .7);
 }
 
 .page-header h1 {
@@ -75,15 +82,15 @@ body {
 
 .page-header nav ul li a{
     margin: 0 .5em;
-    padding:0 1em;
+    padding:0 .25em;
     color: var(--forth-color);
     font-size: 1.5vw;
     font-weight: lighter;
-    transition:ease-in .25s;
 }
 
 .page-header nav ul li a:hover {
     box-shadow: 2px 2px 2px var(--fifth-color);
+    transition:ease-in .25s;
 }
 
 .page-header nav ul li a:focus {
@@ -133,9 +140,13 @@ body {
 }
 
 .about img {
+    margin:auto;
     width:25vw;
     height:25vw;
-    margin:auto;
+    min-width: 200px;
+    min-height: 200px;
+    max-height: 400px;
+    max-width: 400px;
 }
 
 /* ABOUT-ME STYLES -------- END */
@@ -143,20 +154,107 @@ body {
 
 
 /* WORK STYLES ---------- START */
+
+/* .my-work {
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 100%, repeat(3, 1fr);
+}
+
+.work-title {
+    grid-column: 1 / -1;
+    width:100%;
+}
+
+.work-square {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 2 / 3;
+    padding-right: 1em;
+    width: auto;
+}
+
+.work-2 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.work-2-img {
+    padding-bottom: 1em;
+    object-fit: cover;
+    width: auto;
+}
+
+.work-2 a {
+    position: inherit;
+} */
+
+
+
+
 .my-work {
     margin: 15px auto;
-    display:flex;
     width:80%;
+    justify-content: space-around;
+    background-color: blue;
 }
 
-.primary-work {
-    flex: 1 0 85%;
+.work-square {
+    display:flex;
+    height: 0;
+    width:47.5%;
+    padding-bottom: 47.5%;
+    background-color: purple;
+}
+/* .work-square a {
+    display: inline-block;
+    margin: auto;
+    background-color: green;
+} */
+
+.work-square a::before {
+    padding-bottom: 100%;
+}
+
+.work-square img {
+
+    width: 100%;
+    height: auto;
+
+}
+
+/* .work-1::after {
+    content: "";
+    display:block;
+    padding-bottom:100%;
+    overflow: hidden;
+}
+
+
+.work-1 {
+    position:absolute;
+} */
+
+/* .work-1 img {
+    object-fit: cover;
+    height: 100%;
+    width:100%;
+} */
+
+.work-2 {
     display: flex;
-    flex-wrap: wrap;
+    width: 47.5%;
+    flex-direction: column;
 }
 
-.primary-work img {
-    max-width:100%;
-    max-height:auto;
+.work-2 a {
+    padding-bottom: 2em;
 }
+
+.work-2-img {
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+}
+
+
 /* WORK STYLES ------------ END */
