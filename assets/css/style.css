@@ -75,15 +75,17 @@ body {
 
 .page-header nav ul li a{
     margin: 0 .5em;
-    padding:0 1em;
+    padding:0 .25em;
+    flex: 1 0 50%;
     color: var(--forth-color);
     font-size: 1.5vw;
     font-weight: lighter;
-    transition:ease-in .25s;
+    
 }
 
 .page-header nav ul li a:hover {
     box-shadow: 2px 2px 2px var(--fifth-color);
+    transition:ease-in .25s;
 }
 
 .page-header nav ul li a:focus {
@@ -100,15 +102,6 @@ body {
 
 
 
-/* HERO STYLES ---------- START */
-.hero {
-    background-color: var(--third-color);
-    height: 150px;
-}
-/* HERO STYLE ------------- END */
-
-
-
 /* ABOUT-ME STYLES ------ START */
 .about { 
     justify-content: space-between;
@@ -116,7 +109,7 @@ body {
 }
 
 .about-me {
-    flex: 0 0 60%;
+    flex: .5 0 60%;
     display: flex;
     flex-wrap: wrap;
     color:var(--fifth-color);
@@ -136,6 +129,10 @@ body {
     width:25vw;
     height:25vw;
     margin:auto;
+    min-width: 200px;
+    min-height:200px;
+    max-width: 450px;
+    max-height: 450px;
 }
 
 /* ABOUT-ME STYLES -------- END */
