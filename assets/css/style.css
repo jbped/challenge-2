@@ -25,7 +25,7 @@
     font-weight: bold;
     flex: 100%;
     color: var(--first-color);
-    margin-bottom: 3em;
+    margin-bottom:1vw;
     text-shadow: .25em .2em 4px var(--drop-shadow);
 }
 
@@ -36,6 +36,24 @@
     width: 70%;
     margin-top: 2em;
     margin-bottom: 2em;
+}
+
+.container-grid {
+    width:100%;
+    margin:auto;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(5em, 1fr));
+    row-gap: 1vw;
+    column-gap: 1vw;
+
+}
+
+.grid-item {
+        background-color: #444;
+        color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: 150%;
 }
 
 body {
@@ -49,7 +67,7 @@ body {
 
 .sec-background {
     background-color: rgba(119, 141, 169, .3);
-    padding: 1em 0;
+    padding: 1vw 0;
 }
 
 
@@ -146,141 +164,48 @@ body {
 /* ABOUT-ME STYLES -------- END */
 
 
-/* WORK STYLES ---------- START */
-
-.my-work {
-    margin: 15px auto;
-    /* width:70%; */
-    justify-content: space-between;
-    /* background-color: blue; */
+/* MY-WORK -------------- START */
+#work {
+    width: 70%;
+    margin: auto;
 }
 
-.my-work:after {
-    background-color: var(--third-color);
-}
-
-.work-1-container {
+.work-prim {
+    background-color: red;
+    grid-column: auto / span 3;
+    grid-row: auto / span 2;
     height: 0;
-    width: 100%;
-    padding-bottom: 100%;
-    border-radius: 1em;
-    box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.4);
-    opacity: .6;
-    transition: ease .5s;
-}
-
-.work-square a::before {
     padding-bottom: 100%;
 }
 
-.work-hover-effect:hover {
-    transform: scale(1.01, 1.01);
-    opacity: 1;
-    box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.7);
-    transition: ease .5s;
-    z-index: 9999;
-}
-
-.work-1 {
-    width: 48.75%;
-}
-
-
-/* Image Containers Layered to the left of the primary project image */
-
-.work-2 {
-    display: flex;
-    width: 47.5%;
-    flex-flow: column;
-    justify-content: space-between;
-    flex: 0 1 1;
-    /* min-width: 22em; */
-}
-
-.work-3 {
-    display: flex;
-    width: 100%;
-    flex-flow: row;
-    justify-content: space-between;
-}
-
-.work-2-container {
-    width: 100%;
+.work-sec  {
+    background-color: blue;
+    grid-column: auto / span 3;
     height: 0;
-    padding-bottom: 48.5%;
-    /* background-image: url(../images/y9DpT.jpg);
-    background-color: red;
-    background-size: 200%;
-    background-repeat: no-repeat;
-    background-position: auto; */
-    margin: auto;
-    border-radius: 1em;
-    box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.4);
-    opacity: .6;
-    transition: ease .5s;
+    padding-bottom: calc(50% - .5vw);
 }
 
-.work-3-container {
-    width: 100%;
-    height: 0;
-    padding-bottom: 48.5%;
-    /* background-image: url(../images/y9DpT.jpg);
-    background-color: red;
-    background-size: 200%;
-    background-repeat: no-repeat;
-    background-position: auto; */
-    margin: auto;
-    border-radius: 1em;
-    box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.4);
-    opacity: .6;
-    transition: ease .5s;
-    min-width: 5em;
-}
-
-.work-img-default {
-    background-size: 200%;
-    background-repeat: no-repeat;
-    background-position: auto;
-}
-
-.work-1-img {
-    background-color: green;
-    /* background-image: url(../images/y9DpT.jpg);*/
-}
-
-.work-2-img {
-    background-color: red;
-    /* background-image: url(../images/y9DpT.jpg);*/
-}
-
-.work-3-img {
-    background-color: pink;
-    /* background-image: url(../images/y9DpT.jpg);*/
-}
-
-.work-4-img {
-    background-color: orange;
-    width: 47.5%;
-    /* background-image: url(../images/y9DpT.jpg);*/
-}
-
-.work-5-img {
+.work-ter {
     background-color: violet;
-    width: 47.5%;
-    /* background-image: url(../images/y9DpT.jpg);*/
+    grid-column: auto / span 3;
+    height: 0;
+    padding-bottom: calc(50% - .5vw);
+}
+
+.tile {
+    border-radius: .8vw;
+    
+
 }
 
 
-/* WORK STYLES ------------ END */
-
-
-/* CONTACT INFO --------- START */
-
-
-/* CONTACT INFO ----------- END */
-
-
-/* RESIZE ON RESO */
+/* MEDIA QUERIES  */
+@media screen and (min-width:1500px) {
+    .container-grid {
+        grid-template-columns: repeat(9, minmax(5em, 1fr));
+    }
+    
+}
 
 @media screen and (max-width:1200px) {
     .flex {
@@ -294,16 +219,9 @@ body {
     }
 }
 
-@media screen and (max-width: 900px) {
-    .sec-background {
-        background-color: rgba(119, 141, 169, 0);
+@media screen and (max-width:900px) {
+    .container-grid {
+        grid-template-columns: repeat(3, minmax(5em, 1fr));
     }
-    .work-1,
-    .work-2,
-    .work-3 {
-        width: 100%;
-    }
-    .work-img-default {
-        margin-bottom: 1em;
-    }
+    
 }
