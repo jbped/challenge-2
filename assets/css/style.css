@@ -25,7 +25,7 @@
     font-weight: bold;
     flex: 100%;
     color: var(--first-color);
-    margin-bottom:1vw;
+    margin-bottom:1em;
     text-shadow: .25em .2em 4px var(--drop-shadow);
 }
 
@@ -43,9 +43,13 @@
     margin:auto;
     display: grid;
     grid-template-columns: repeat(6, minmax(5em, 1fr));
-    row-gap: 1vw;
-    column-gap: 1vw;
+    row-gap: 1em;
+    column-gap: 1em;
 
+}
+
+a {
+    text-decoration: none;
 }
 
 .grid-item {
@@ -67,9 +71,12 @@ body {
 
 .sec-background {
     background-color: rgba(119, 141, 169, .3);
-    padding: 1vw 0;
+    padding: 1em 0 2em 0;
 }
 
+.wid-100 {
+    width: 100%;
+}
 
 /* UNIVERSAL STYLES ------- END */
 
@@ -108,20 +115,13 @@ body {
 }
 
 .page-header nav ul li a:hover {
-    box-shadow: 2px 2px 2px var(--fifth-color);
+    box-shadow: .2em .2em .3em rgba(248, 248, 248, 0.6);
+    border-radius: .1em;
+    /* background-color: var(--forth-color); */
+    background: rgba(119, 141, 169, .7);
+    color: var(--first-color);
     transition: ease-in .25s;
 }
-
-.page-header nav ul li a:focus {
-    box-shadow: 2px 2px 2px var(--fifth-color);
-    background-color: var(--forth-color);
-    color: var(--first-color);
-}
-
-.page-header a {
-    text-decoration: none;
-}
-
 
 /* HEADER STYLES ---------- END */
 
@@ -139,11 +139,12 @@ body {
     flex-wrap: wrap;
     color: var(--fifth-color);
     background-color: var(--forth-color);
-    border-radius: 10px;
+    border-radius: .5em;
     padding: 1.8em;
     font-size: 22px;
     font-weight: lighter;
     box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.7);
+    flex: .9;
 }
 
 .about-me p {
@@ -171,7 +172,7 @@ body {
 }
 
 .work-prim {
-    background-color: red;
+    /* background-color: red; */
     grid-column: auto / span 3;
     grid-row: auto / span 2;
     height: 0;
@@ -182,22 +183,71 @@ body {
     background-color: blue;
     grid-column: auto / span 3;
     height: 0;
-    padding-bottom: calc(50% - .5vw);
+    padding-bottom: calc(50% - .5em);
 }
 
 .work-ter {
     background-color: violet;
     grid-column: auto / span 3;
     height: 0;
-    padding-bottom: calc(50% - .5vw);
+    padding-bottom: calc(50% - .5em);
 }
 
 .tile {
-    border-radius: .8vw;
-    
-
+    border-radius: .5em;
+    box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.4);
+    opacity: .7;
+    transition: ease-out .5s;
+    display: flex;
+    flex-wrap: wrap;
+    width:100%
 }
 
+.tile:hover {
+    transform: scale(1.02, 1.02);
+    opacity: 1;
+    box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.7);
+    transition: ease .5s;
+}
+
+.tile-link {
+    opacity: .3;
+    align-items: baseline;
+    padding-bottom: inherit;
+    height: inherit;
+    width: inherit;
+    transition: ease .5s;
+}
+
+.tile-link:hover{
+    opacity: 1;
+    transition: ease .5s;
+}
+
+.tile-title{
+    width: 50%;
+    background:linear-gradient(90deg, rgba(119,141,169,1) 0%, rgba(186,197,211,1) 50%, rgba(255,255,255,0) 100%);;
+    border-radius: .5em .5em 0 0;
+    padding: 2% 0 2% 2.5%;
+    text-align: left;
+    color: var(--first-color);
+    font-weight: bolder;
+}
+
+
+/* MY WORK ----------------------- End */
+
+
+/* MY WORK PICTURES ------------ Start */
+.work-pic-dims {
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.work-pic-1 {
+    background-image: url(../images/y9DpT.jpg);
+}
 
 /* MEDIA QUERIES  */
 @media screen and (min-width:1500px) {
