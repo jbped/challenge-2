@@ -202,6 +202,7 @@ body {
     width: 100%;
     flex-flow: row;
     justify-content: space-between;
+    padding-top: 2em;
 }
 
 .work-3 a {
@@ -223,6 +224,7 @@ body {
     box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.4);
     opacity: .6;
     transition: ease .5s;
+   
 }
 
 .work-3-container {
@@ -240,6 +242,7 @@ body {
     opacity: .6;
     transition: ease .5s;
     min-width: 5em;
+    /* padding: 0 1em 48.5% 1em; */
 }
 
 .work-img-default {
