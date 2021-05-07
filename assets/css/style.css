@@ -1,18 +1,19 @@
 /* UNIVERSAL STYLES ----- START*/
+
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --favorite-color: ;
     --first-color: #0d1b2a;
     --second-color: #1b263b;
     --third-color: #415a77;
-    --forth-color: rgba(119, 141, 169);
+    --forth-color: rgba(119, 141, 169, 1);
     --fifth-color: #e0e1dd;
-    --drop-shadow: rgba(128, 128, 128);
+    --drop-shadow: rgba(128, 128, 128, 1);
 }
 
 .flex {
@@ -24,17 +25,17 @@
     font-weight: bold;
     flex: 100%;
     color: var(--first-color);
-    margin-bottom:2em;
+    margin-bottom: 3em;
     text-shadow: .25em .2em 4px var(--drop-shadow);
 }
 
 .container-flex {
     margin: auto;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
-    width:80%;
-    margin-top:2em;
-    margin-bottom:5em;   
+    width: 70%;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 body {
@@ -46,18 +47,24 @@ body {
     background-position: 30% 50%;
 }
 
+.sec-background {
+    background-color: rgba(119, 141, 169, .3);
+    padding: 1em 0;
+}
+
+
 /* UNIVERSAL STYLES ------- END */
 
 
-
 /* HEADER STYLES -------- START */
+
 .page-header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
-    width:100%;
-    background: rgb(3,22,42);
+    width: 100%;
+    background: rgb(3, 22, 42);
     background: linear-gradient(180deg, var(--first-color) 0%, rgb(25, 52, 80) 99%);
     padding: 20px 0;
     box-shadow: 0 .5em 20px rgba(128, 128, 128, .7);
@@ -74,9 +81,9 @@ body {
     justify-content: space-between;
 }
 
-.page-header nav ul li a{
+.page-header nav ul li a {
     margin: 0 .5em;
-    padding:0 .25em;
+    padding: 0 .25em;
     color: var(--forth-color);
     font-size: 1.5vw;
     font-weight: lighter;
@@ -84,7 +91,7 @@ body {
 
 .page-header nav ul li a:hover {
     box-shadow: 2px 2px 2px var(--fifth-color);
-    transition:ease-in .25s;
+    transition: ease-in .25s;
 }
 
 .page-header nav ul li a:focus {
@@ -97,93 +104,206 @@ body {
     text-decoration: none;
 }
 
+
 /* HEADER STYLES ---------- END */
 
 
-
 /* ABOUT-ME STYLES ------ START */
-.about { 
+
+.about {
     justify-content: space-between;
     align-content: center;
 }
 
 .about-me {
-    flex: .5 0 60%;
+    flex: .5 0 500px;
     display: flex;
     flex-wrap: wrap;
-    color:var(--fifth-color);
+    color: var(--fifth-color);
     background-color: var(--forth-color);
     border-radius: 10px;
-    padding:1.8em;
+    padding: 1.8em;
     font-size: 22px;
     font-weight: lighter;
-    box-shadow: .25em .25em 6px rgb(161, 161, 161,.7);
+    box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.7);
 }
 
-.about-me p{
+.about-me p {
     opacity: 1.5;
 }
 
 .about img {
-    margin:auto;
-    width:25vw;
-    height:25vw;
+    margin: auto;
+    width: 25vw;
+    height: 25vw;
     min-width: 200px;
     min-height: 200px;
     max-height: 400px;
     max-width: 400px;
 }
 
+
 /* ABOUT-ME STYLES -------- END */
 
 
-
 /* WORK STYLES ---------- START */
+
 .my-work {
     margin: 15px auto;
-    width:80%;
+    /* width:70%; */
     justify-content: space-between;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
-.work-square {
-    display:flex;
+.my-work:after {
+    background-color: var(--third-color);
+}
+
+.work-1-container {
     height: 0;
-    width:100%;
+    width: 100%;
     padding-bottom: 100%;
-    /* background-image: url(../images/y9DpT.jpg); */
-    background-color:green;
-    background-size: 200%;
-    background-repeat: no-repeat;
-    background-position: center;
+    border-radius: 1em;
+    box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.4);
+    opacity: .6;
+    transition: ease .5s;
 }
 
 .work-square a::before {
     padding-bottom: 100%;
 }
 
+.work-hover-effect:hover {
+    transform: scale(1.01, 1.01);
+    opacity: 1;
+    box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.7);
+    transition: ease .5s;
+    z-index: 9999;
+}
+
 .work-1 {
     width: 48.75%;
 }
 
+
+/* Image Containers Layered to the left of the primary project image */
+
 .work-2 {
     display: flex;
-    width: 48.75%;
+    width: 47.5%;
     flex-flow: column;
     justify-content: space-between;
-    flex:0 1 1;
+    flex: 0 1 1;
+    /* min-width: 22em; */
 }
 
+.work-3 {
+    display: flex;
+    width: 100%;
+    flex-flow: row;
+    justify-content: space-between;
+}
 
-.work-2-img {
-    width:100%;
-    height:0;
-    padding-bottom: 30%;
-    /* background-image: url(../images/y9DpT.jpg); */
+.work-2-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 48.5%;
+    /* background-image: url(../images/y9DpT.jpg);
     background-color: red;
     background-size: 200%;
     background-repeat: no-repeat;
-    background-position: auto;
+    background-position: auto; */
     margin: auto;
+    border-radius: 1em;
+    box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.4);
+    opacity: .6;
+    transition: ease .5s;
 }
+
+.work-3-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 48.5%;
+    /* background-image: url(../images/y9DpT.jpg);
+    background-color: red;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: auto; */
+    margin: auto;
+    border-radius: 1em;
+    box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.4);
+    opacity: .6;
+    transition: ease .5s;
+    min-width: 5em;
+}
+
+.work-img-default {
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: auto;
+}
+
+.work-1-img {
+    background-color: green;
+    /* background-image: url(../images/y9DpT.jpg);*/
+}
+
+.work-2-img {
+    background-color: red;
+    /* background-image: url(../images/y9DpT.jpg);*/
+}
+
+.work-3-img {
+    background-color: pink;
+    /* background-image: url(../images/y9DpT.jpg);*/
+}
+
+.work-4-img {
+    background-color: orange;
+    width: 47.5%;
+    /* background-image: url(../images/y9DpT.jpg);*/
+}
+
+.work-5-img {
+    background-color: violet;
+    width: 47.5%;
+    /* background-image: url(../images/y9DpT.jpg);*/
+}
+
+
 /* WORK STYLES ------------ END */
+
+
+/* CONTACT INFO --------- START */
+
+
+/* CONTACT INFO ----------- END */
+
+
+/* RESIZE ON RESO */
+
+@media screen and (max-width:1200px) {
+    .flex {
+        margin-bottom: 1em;
+    }
+    .about {
+        flex-flow: column;
+    }
+    .about-me {
+        flex: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .sec-background {
+        background-color: rgba(119, 141, 169, 0);
+    }
+    .work-1,
+    .work-2,
+    .work-3 {
+        width: 100%;
+    }
+    .work-img-default {
+        margin-bottom: 1em;
+    }
+}
