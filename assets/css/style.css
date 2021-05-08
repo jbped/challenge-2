@@ -172,7 +172,6 @@ body {
 }
 
 .work-prim {
-    /* background-color: red; */
     grid-column: auto / span 3;
     grid-row: auto / span 2;
     height: 0;
@@ -180,14 +179,12 @@ body {
 }
 
 .work-sec  {
-    background-color: blue;
     grid-column: auto / span 3;
     height: 0;
     padding-bottom: calc(50% - .5em);
 }
 
 .work-ter {
-    background-color: violet;
     grid-column: auto / span 3;
     height: 0;
     padding-bottom: calc(50% - .5em);
@@ -235,10 +232,10 @@ body {
 }
 
 
-/* MY WORK ----------------------- End */
+/* MY WORK ----------------------- END */
 
 
-/* MY WORK PICTURES ------------ Start */
+/* MY WORK PICTURES ------------ START */
 .work-pic-dims {
     background-size: 200%;
     background-repeat: no-repeat;
@@ -247,6 +244,40 @@ body {
 
 .work-pic-1 {
     background-image: url(../images/y9DpT.jpg);
+}
+
+/* CONTACT ME ----------------- START */
+.icon-bar {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.contact-details {
+    justify-content: space-between;
+    flex:.4;
+    margin:auto;
+}
+
+.icon-bar svg {
+    height: 4vw;
+    max-height: 4em;
+    min-height: 2.5em;
+}
+
+.github-icon {
+    fill:#211F1F;
+}
+
+.linkedin-icon {
+    fill:#006192;
+}
+
+.insta-icon{
+    fill: #dd2a7b;
+}    
+
+.facebook-icon {
+    fill: #1778F2;
 }
 
 /* MEDIA QUERIES  */
