@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --favorite-color: ;
     --first-color: #0d1b2a;
@@ -26,7 +30,8 @@
     flex: 100%;
     color: var(--first-color);
     margin-bottom:1em;
-    text-shadow: .25em .2em 4px var(--drop-shadow);
+    text-shadow: .12em .1em .2em var(--drop-shadow);
+    font-size: calc(14px + .9vw);
 }
 
 .container-flex {
@@ -62,11 +67,13 @@ a {
 
 body {
     font-family: "Trebuchet MS", "sans-serif";
-    background-image: url("../images/background.jpg");
+    /* background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     width: 100%;
-    background-position: 30% 50%;
+    background-position: 30% 50%; */
+    background: rgb(225, 232, 238);
+    /* background: linear-gradient(180deg, rgba(188,206,219,1) 0%, rgba(241,241,241,1) 100%); */
 }
 
 .sec-background {
@@ -91,12 +98,26 @@ body {
     width: 100%;
     background: rgb(3, 22, 42);
     background: linear-gradient(180deg, var(--first-color) 0%, rgb(25, 52, 80) 99%);
-    padding: 20px 0;
-    box-shadow: 0 .5em 20px rgba(128, 128, 128, .7);
+    /* padding: .7em 0; */
+    box-shadow: 0 .5em 20px rgba(58, 58, 58, 0.7);
+    flex: 1;
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+    z-index: 9999;
 }
 
 .page-header h1 {
     color: var(--forth-color);
+    font-size: calc(18px + .9vw);
+    margin: .5em .5em;
+}
+
+nav {
+    margin: .5em .5em;
+    padding-top:.5em;
+    align-items: center;
+
 }
 
 .page-header nav ul {
@@ -107,20 +128,24 @@ body {
 }
 
 .page-header nav ul li a {
-    margin: 0 .5em;
+    margin: .5em .5em;
     padding: 0 .25em;
     color: var(--forth-color);
-    font-size: 1.5vw;
+    font-size: calc(14px + .9vw);
     font-weight: lighter;
 }
 
 .page-header nav ul li a:hover {
-    box-shadow: .2em .2em .3em rgba(248, 248, 248, 0.6);
+    box-shadow: .2em .2em .3em rgba(20, 25, 37, 0.6);
     border-radius: .1em;
     /* background-color: var(--forth-color); */
     background: rgba(119, 141, 169, .7);
     color: var(--first-color);
     transition: ease-in .25s;
+}
+
+.page-header nav ul li a:active {
+    box-shadow: inset .2em .2em var(--box-shadow);
 }
 
 /* HEADER STYLES ---------- END */
@@ -139,16 +164,18 @@ body {
     flex-wrap: wrap;
     color: var(--fifth-color);
     background-color: var(--forth-color);
+    line-height: 1.4;
     border-radius: .5em;
     padding: 1.8em;
-    font-size: 22px;
     font-weight: lighter;
     box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.7);
     flex: .9;
+    text-align: justify;
 }
 
 .about-me p {
     opacity: 1.5;
+    font-size: 22px;
 }
 
 .about img {
@@ -222,8 +249,8 @@ body {
 }
 
 .tile-title{
-    width: 50%;
-    background:linear-gradient(90deg, rgba(119,141,169,1) 0%, rgba(186,197,211,1) 50%, rgba(255,255,255,0) 100%);;
+    width: inherit;
+    background:linear-gradient(90deg, rgba(119,141,169,1) 0%, rgba(186,197,211,1) 50%, rgba(255,255,255,0) 80%);;
     border-radius: .5em .5em 0 0;
     padding: 2% 0 2% 2.5%;
     text-align: left;
@@ -231,6 +258,11 @@ body {
     font-weight: bolder;
 }
 
+.tile-title span{
+    font-weight:lighter;
+    font-style: italic;
+    color: var(--third-color)
+}
 
 /* MY WORK ----------------------- END */
 
@@ -242,8 +274,18 @@ body {
     background-position: center;
 }
 
+.work-pic-stock { /* Image pulled from https://www.pexels.com/photo/html-code-270366/*/
+    background-image: url(../images/stock-html.jpg);
+    background-size: 100%;
+}
+
 .work-pic-1 {
-    background-image: url(../images/y9DpT.jpg);
+    background-image: url(../images/run-buddy.png);
+    background-size:100%;
+}
+
+.work-pic-2 {
+    background-image: url(../images/robo-gladiators.png);
 }
 
 /* CONTACT ME ----------------- START */
@@ -254,8 +296,9 @@ body {
 
 .contact-details {
     justify-content: space-between;
-    flex:.4;
+    flex:0 3 50%;
     margin:auto;
+    width:100%;
 }
 
 .icon-bar svg {
@@ -264,6 +307,25 @@ body {
     min-height: 2.5em;
 }
 
+.contact-info {
+    font-style: normal;
+    font-weight: bold;
+    color:  var(--first-color);
+    font-size: calc(12px + .3vw);
+    margin: 0 .2em;
+}
+
+.contact-info span > *{
+    display: inline-block;
+    color: var(--third-color);
+    font-weight: normal;
+} 
+
+.contact-info span a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Me Icons --- Icons acquired from https://iconmonstr.com/*/
 .github-icon {
     fill:#211F1F;
 }
@@ -280,14 +342,33 @@ body {
     fill: #1778F2;
 }
 
-/* MEDIA QUERIES  */
+.github-icon:hover,
+.linkedin-icon:hover,
+.insta-icon:hover,
+.facebook-icon:hover{
+    fill: rgba(119, 141, 169, 1);
+    transition: ease .2s;
+}
+
+
+
+
+/* MEDIA QUERIES ------------------------ START */
+
+/* X > 1500px width */
 @media screen and (min-width:1500px) {
     .container-grid {
         grid-template-columns: repeat(9, minmax(5em, 1fr));
     }
     
 }
-
+@media screen and (max-width:1314px) {
+    .contact-details{
+        justify-content: center;
+    }
+    
+}
+/* X < 1200px width */
 @media screen and (max-width:1200px) {
     .flex {
         margin-bottom: 1em;
@@ -300,9 +381,13 @@ body {
     }
 }
 
+/* X < 900px width */
 @media screen and (max-width:900px) {
     .container-grid {
         grid-template-columns: repeat(3, minmax(5em, 1fr));
+    }
+    .page-header {
+        position: absolute;
     }
     
 }
