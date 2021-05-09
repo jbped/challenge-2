@@ -440,7 +440,8 @@ footer {
         grid-template-columns: repeat(3, minmax(5em, 1fr));
     }
     .page-header {
-        position: absolute;
+        position: static;
+        
     }
     
 }
