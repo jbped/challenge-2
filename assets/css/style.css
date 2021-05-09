@@ -185,7 +185,7 @@ nav {
 
 .about-me p {
     opacity: 1.5;
-    font-size: 22px;
+    font-size: calc(12px + .5vw);
 }
 
 .about img {
