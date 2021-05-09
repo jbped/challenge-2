@@ -3,7 +3,7 @@
 ## Description
 [Personal Portfolio](https://jbped.github.io/challenge-2/?) website design for myself. Includes header/nav, picture of myself, brief bio, images/links to previous projects of mine (using CSS Grid), Contact me, and Footer. Links that have been added to the page for the purpose of stylization or meeting certain grading criteria redirect to a page notifying user that the page is WIP. 
 
-[Jake Pedigo's Personal Portfolio V1]()
+![Jake Pedigo's Personal Portfolio V1](./assets/images/portfolio-pic.png)
 
 In the creation of the project I created multiple branches to separate features being worked on. Something that I have noticed that I need to improve on is when working a specific feature I don't touch items in another feature/element not associated with the work at hand.
 
