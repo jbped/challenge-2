@@ -85,6 +85,16 @@ body {
     width: 100%;
 }
 
+.page-container {
+    position:relative;
+    min-height: 100vh;
+
+}
+
+#bottom-pad {
+    padding-bottom:2.5rem;
+}
+
 /* UNIVERSAL STYLES ------- END */
 
 
@@ -97,7 +107,7 @@ body {
     align-content: center;
     width: 100%;
     background: rgb(3, 22, 42);
-    background: linear-gradient(180deg, var(--first-color) 0%, rgb(25, 52, 80) 99%);
+    background: linear-gradient(180deg, var(--first-color) 20%, rgb(20, 39, 61) 99%);
     /* padding: .7em 0; */
     box-shadow: 0 .5em 20px rgba(58, 58, 58, 0.7);
     flex: 1;
@@ -235,7 +245,7 @@ nav {
 }
 
 .tile-link {
-    opacity: .3;
+    opacity: .1;
     align-items: baseline;
     padding-bottom: inherit;
     height: inherit;
@@ -258,6 +268,8 @@ nav {
     font-weight: bolder;
 }
 
+
+
 .tile-title span{
     font-weight:lighter;
     font-style: italic;
@@ -269,26 +281,42 @@ nav {
 
 /* MY WORK PICTURES ------------ START */
 .work-pic-dims {
-    background-size: 200%;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.work-pic-stock { /* Image pulled from https://www.pexels.com/photo/html-code-270366/*/
-    background-image: url(../images/stock-html.jpg);
-    background-size: 100%;
+.work-pic-stock { /* Image pulled from https://blog.hyperiondev.com/index.php/2019/02/26/types-web-development-jobs-look-2019/*/
+    background-image: url(../images/stock.jpg);
 }
 
 .work-pic-1 {
     background-image: url(../images/run-buddy.png);
-    background-size:100%;
 }
 
 .work-pic-2 {
     background-image: url(../images/robo-gladiators.png);
+    background-size:200%;
 }
 
+.work-pic-3 {
+    background-image: url(../images/horiseon.png);
+    background-position-y:top;
+}
 /* CONTACT ME ----------------- START */
+.contact-me {
+    margin: auto;
+    color: var(--fifth-color);
+    background-color: var(--forth-color);
+    border-radius: .5em;
+    padding: .6em;
+    font-weight: lighter;
+    box-shadow: .3em .3em 8px rgba(165, 165, 165, 0.7);
+    flex: .9;
+    text-align: center;
+
+}
+
 .icon-bar {
     width: 100%;
     justify-content: space-around;
@@ -350,9 +378,34 @@ nav {
     transition: ease .2s;
 }
 
+/* FOOTER -------------------- START */
+footer {
+    bottom: 0;
+    width:100%;
+}
+.footer-text {
+    background: var(--first-color);
+    padding: .8em;
+    color: var(--fifth-color);
+    width:100%;
+    text-align: right;
+}
 
-
-
+/* PARDON DUST PAGE ----------------- START */
+.pardon-dust {
+    display: flex;
+    position: absolute;
+    top:7vh;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;   
+    line-height: 2;
+    color:var(--third-color);
+    text-shadow: .2em .2em .25em rgb(158, 158, 158);
+}
 /* MEDIA QUERIES ------------------------ START */
 
 /* X > 1500px width */
