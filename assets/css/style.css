@@ -6,7 +6,8 @@
     box-sizing: border-box;
 }
 
-html {
+html { 
+    scroll-padding-top: 8vh;
     scroll-behavior: smooth;
 }
 
